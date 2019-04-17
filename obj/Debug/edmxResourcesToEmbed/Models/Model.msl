@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="CheckEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Должности">
+      <EntityTypeMapping TypeName="Model.Должности">
+        <MappingFragment StoreEntitySet="Должности">
+          <ScalarProperty Name="Код_должности" ColumnName="Код должности" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+          <ScalarProperty Name="Сокращенное_наименование" ColumnName="Сокращенное наименование" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Муниципальные_образования">
+      <EntityTypeMapping TypeName="Model.Муниципальные_образования">
+        <MappingFragment StoreEntitySet="Муниципальные образования">
+          <ScalarProperty Name="Код_муниципального_образования" ColumnName="Код муниципального образования" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Образовательные_организации">
+      <EntityTypeMapping TypeName="Model.Образовательные_организации">
+        <MappingFragment StoreEntitySet="Образовательные организации">
+          <ScalarProperty Name="Код_образовательной_организации" ColumnName="Код образовательной организации" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+          <ScalarProperty Name="Сокращенное_наименование" ColumnName="Сокращенное наименование" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="Код_муниципального_образования" ColumnName="Код муниципального образования" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Приказы">
+      <EntityTypeMapping TypeName="Model.Приказы">
+        <MappingFragment StoreEntitySet="Приказы">
+          <ScalarProperty Name="Код_приказа" ColumnName="Код приказа" />
+          <ScalarProperty Name="Номер_приказа" ColumnName="Номер приказа" />
+          <ScalarProperty Name="Дата_приказа" ColumnName="Дата приказа" />
+          <ScalarProperty Name="Код_формы_приказа" ColumnName="Код формы приказа" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Присутствующие_при_проверке">
+      <EntityTypeMapping TypeName="Model.Присутствующие_при_проверке">
+        <MappingFragment StoreEntitySet="Присутствующие при проверке">
+          <ScalarProperty Name="Код_присутствующего" ColumnName="Код присутствующего" />
+          <ScalarProperty Name="Код_проверки" ColumnName="Код проверки" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Должность" ColumnName="Должность" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Проверка">
+      <EntityTypeMapping TypeName="Model.Проверка">
+        <MappingFragment StoreEntitySet="Проверка">
+          <ScalarProperty Name="Код_проверки" ColumnName="Код проверки" />
+          <ScalarProperty Name="Дата_проверки" ColumnName="Дата проверки" />
+          <ScalarProperty Name="Код_образовательной_организации" ColumnName="Код образовательной организации" />
+          <ScalarProperty Name="Код_специалиста" ColumnName="Код специалиста" />
+          <ScalarProperty Name="Код_приказа" ColumnName="Код приказа" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Специалисты">
+      <EntityTypeMapping TypeName="Model.Специалисты">
+        <MappingFragment StoreEntitySet="Специалисты">
+          <ScalarProperty Name="Код_специалиста" ColumnName="Код специалиста" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Код_должности" ColumnName="Код должности" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Формы_приказа">
+      <EntityTypeMapping TypeName="Model.Формы_приказа">
+        <MappingFragment StoreEntitySet="Формы приказа">
+          <ScalarProperty Name="Код_формы_приказа" ColumnName="Код формы приказа" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,17 @@
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\bin\Debug\WindowsFormsApp17.exe.config
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\bin\Debug\WindowsFormsApp17.exe
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\bin\Debug\WindowsFormsApp17.pdb
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\bin\Debug\EntityFramework.dll
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\bin\Debug\EntityFramework.xml
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\obj\Debug\WindowsFormsApp17.csprojAssemblyReference.cache
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\obj\Debug\WindowsFormsApp17.Form1.resources
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\obj\Debug\WindowsFormsApp17.Form2.resources
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\obj\Debug\WindowsFormsApp17.Properties.Resources.resources
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\obj\Debug\WindowsFormsApp17.csproj.GenerateResource.cache
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\obj\Debug\WindowsFormsApp17.csproj.CoreCompileInputs.cache
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\obj\Debug\WindowsFormsApp17.csproj.CopyComplete
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\obj\Debug\WindowsFormsApp17.exe
+C:\Users\Николай Финогентов\Desktop\WindowsFormsApp17\WindowsFormsApp17\obj\Debug\WindowsFormsApp17.pdb

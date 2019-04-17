@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Должности">
+    <Key>
+      <PropertyRef Name="Код должности" />
+    </Key>
+    <Property Name="Код должности" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Наименование" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Сокращенное наименование" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Муниципальные образования">
+    <Key>
+      <PropertyRef Name="Код муниципального образования" />
+    </Key>
+    <Property Name="Код муниципального образования" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Наименование" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Образовательные организации">
+    <Key>
+      <PropertyRef Name="Код образовательной организации" />
+    </Key>
+    <Property Name="Код образовательной организации" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Наименование" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Сокращенное наименование" Type="varchar" MaxLength="50" />
+    <Property Name="Адрес" Type="varchar" MaxLength="50" />
+    <Property Name="Код муниципального образования" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Приказы">
+    <Key>
+      <PropertyRef Name="Код приказа" />
+    </Key>
+    <Property Name="Код приказа" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Номер приказа" Type="varchar" MaxLength="50" />
+    <Property Name="Дата приказа" Type="date" />
+    <Property Name="Код формы приказа" Type="int" />
+  </EntityType>
+  <EntityType Name="Присутствующие при проверке">
+    <Key>
+      <PropertyRef Name="Код присутствующего" />
+    </Key>
+    <Property Name="Код присутствующего" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Код проверки" Type="int" />
+    <Property Name="Фамилия" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Имя" Type="varchar" MaxLength="50" />
+    <Property Name="Отчество" Type="varchar" MaxLength="50" />
+    <Property Name="Должность" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Проверка">
+    <Key>
+      <PropertyRef Name="Код проверки" />
+    </Key>
+    <Property Name="Код проверки" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Дата проверки" Type="date" />
+    <Property Name="Код образовательной организации" Type="int" />
+    <Property Name="Код специалиста" Type="int" />
+    <Property Name="Код приказа" Type="int" />
+  </EntityType>
+  <EntityType Name="Специалисты">
+    <Key>
+      <PropertyRef Name="Код специалиста" />
+    </Key>
+    <Property Name="Код специалиста" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Фамилия" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Имя" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Отчество" Type="varchar" MaxLength="50" />
+    <Property Name="Код должности" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Формы приказа">
+    <Key>
+      <PropertyRef Name="Код формы приказа" />
+    </Key>
+    <Property Name="Код формы приказа" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Наименование" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Образовательные организации_Муниципальные образования">
+    <End Role="Муниципальные образования" Type="Self.Муниципальные образования" Multiplicity="1" />
+    <End Role="Образовательные организации" Type="Self.Образовательные организации" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Муниципальные образования">
+        <PropertyRef Name="Код муниципального образования" />
+      </Principal>
+      <Dependent Role="Образовательные организации">
+        <PropertyRef Name="Код муниципального образования" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Приказы_Формы приказа1">
+    <End Role="Формы приказа" Type="Self.Формы приказа" Multiplicity="0..1" />
+    <End Role="Приказы" Type="Self.Приказы" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Формы приказа">
+        <PropertyRef Name="Код формы приказа" />
+      </Principal>
+      <Dependent Role="Приказы">
+        <PropertyRef Name="Код формы приказа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Присутствующие при проверке_Проверка">
+    <End Role="Проверка" Type="Self.Проверка" Multiplicity="0..1" />
+    <End Role="Присутствующие при проверке" Type="Self.Присутствующие при проверке" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Проверка">
+        <PropertyRef Name="Код проверки" />
+      </Principal>
+      <Dependent Role="Присутствующие при проверке">
+        <PropertyRef Name="Код проверки" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Проверка_Образовательные организации">
+    <End Role="Образовательные организации" Type="Self.Образовательные организации" Multiplicity="0..1" />
+    <End Role="Проверка" Type="Self.Проверка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Образовательные организации">
+        <PropertyRef Name="Код образовательной организации" />
+      </Principal>
+      <Dependent Role="Проверка">
+        <PropertyRef Name="Код образовательной организации" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Проверка_Приказы">
+    <End Role="Приказы" Type="Self.Приказы" Multiplicity="0..1" />
+    <End Role="Проверка" Type="Self.Проверка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Приказы">
+        <PropertyRef Name="Код приказа" />
+      </Principal>
+      <Dependent Role="Проверка">
+        <PropertyRef Name="Код приказа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Проверка_Специалисты">
+    <End Role="Специалисты" Type="Self.Специалисты" Multiplicity="0..1" />
+    <End Role="Проверка" Type="Self.Проверка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Специалисты">
+        <PropertyRef Name="Код специалиста" />
+      </Principal>
+      <Dependent Role="Проверка">
+        <PropertyRef Name="Код специалиста" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Специалисты_Должности">
+    <End Role="Должности" Type="Self.Должности" Multiplicity="1" />
+    <End Role="Специалисты" Type="Self.Специалисты" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Должности">
+        <PropertyRef Name="Код должности" />
+      </Principal>
+      <Dependent Role="Специалисты">
+        <PropertyRef Name="Код должности" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ModelContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Должности" EntityType="Self.Должности" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Муниципальные образования" EntityType="Self.Муниципальные образования" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Образовательные организации" EntityType="Self.Образовательные организации" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Приказы" EntityType="Self.Приказы" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Присутствующие при проверке" EntityType="Self.Присутствующие при проверке" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Проверка" EntityType="Self.Проверка" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Специалисты" EntityType="Self.Специалисты" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Формы приказа" EntityType="Self.Формы приказа" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Образовательные организации_Муниципальные образования" Association="Self.FK_Образовательные организации_Муниципальные образования">
+      <End Role="Муниципальные образования" EntitySet="Муниципальные образования" />
+      <End Role="Образовательные организации" EntitySet="Образовательные организации" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Приказы_Формы приказа1" Association="Self.FK_Приказы_Формы приказа1">
+      <End Role="Формы приказа" EntitySet="Формы приказа" />
+      <End Role="Приказы" EntitySet="Приказы" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Присутствующие при проверке_Проверка" Association="Self.FK_Присутствующие при проверке_Проверка">
+      <End Role="Проверка" EntitySet="Проверка" />
+      <End Role="Присутствующие при проверке" EntitySet="Присутствующие при проверке" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Проверка_Образовательные организации" Association="Self.FK_Проверка_Образовательные организации">
+      <End Role="Образовательные организации" EntitySet="Образовательные организации" />
+      <End Role="Проверка" EntitySet="Проверка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Проверка_Приказы" Association="Self.FK_Проверка_Приказы">
+      <End Role="Приказы" EntitySet="Приказы" />
+      <End Role="Проверка" EntitySet="Проверка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Проверка_Специалисты" Association="Self.FK_Проверка_Специалисты">
+      <End Role="Специалисты" EntitySet="Специалисты" />
+      <End Role="Проверка" EntitySet="Проверка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Специалисты_Должности" Association="Self.FK_Специалисты_Должности">
+      <End Role="Должности" EntitySet="Должности" />
+      <End Role="Специалисты" EntitySet="Специалисты" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

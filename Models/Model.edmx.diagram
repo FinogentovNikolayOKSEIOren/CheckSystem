@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="97f8953a9f134acb83907ace96b082c0" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Должности" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Муниципальные_образования" Width="1.5" PointX="0.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Образовательные_организации" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Приказы" Width="1.5" PointX="3.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Присутствующие_при_проверке" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Проверка" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Специалисты" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Формы_приказа" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Специалисты_Должности" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Образовательные_организации_Муниципальные_образования" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Проверка_Образовательные_организации" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Приказы_Формы_приказа" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Проверка_Приказы" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Присутствующие_при_проверке_Проверка" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Проверка_Специалисты" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
